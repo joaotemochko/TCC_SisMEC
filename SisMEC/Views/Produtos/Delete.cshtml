@@ -1,0 +1,58 @@
+﻿@model SisMEC.Models.Produto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">EXCLUIR</h4>
+        </div>
+
+        <div class="modal-body">
+
+            <h3>Deseja mesmo excluir este produto?</h3>
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ProdutoNome)</th>
+                        <td>@Html.DisplayFor(model => model.ProdutoNome)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ProdutoQuantidade)</th>
+                        <td> @Html.DisplayFor(model => model.ProdutoQuantidade)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ProdutoValor)</th>
+                        <td> @Html.DisplayFor(model => model.ProdutoValor)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ProdutoDataValidade)</th>
+                        <td> @Html.DisplayFor(model => model.ProdutoDataValidade)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!---modal body-->
+        <div class="modal-footer">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="ProdutoId" />
+                    <input type="submit" value="Excluir" class="btn btn-danger" />
+                    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                </form>
+            }
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+    }
+</script>

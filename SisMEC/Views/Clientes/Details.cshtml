@@ -1,0 +1,56 @@
+﻿@model SisMEC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do Cliente</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteNome)</th>
+                        <td>@Html.DisplayFor(model => model.ClienteNome)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteCPF)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteCPF)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteEmail)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteEmail)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteTelefone)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteTelefone)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ClienteEndereco)</th>
+                        <td>@Html.DisplayFor(model => model.ClienteEndereco)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.Carro)</th>
+                        <td>@Html.DisplayFor(model => model.Carro.CarroMarca)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a class="btn btn-primary" asp-action="Index">Voltar</a>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+    }
+</script>

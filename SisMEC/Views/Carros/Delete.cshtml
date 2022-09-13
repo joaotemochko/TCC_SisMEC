@@ -1,0 +1,56 @@
+﻿@model SisMEC.Models.Carro
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">EXCLUIR</h4>
+        </div>
+
+        <div class="modal-body">
+
+            <h3>Deseja mesmo excluir este carro?</h3>
+
+
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroMarca)</th>
+                        <td>@Html.DisplayFor(model => model.CarroMarca)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroModelo)</th>
+                        <td> @Html.DisplayFor(model => model.CarroModelo)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroObs)</th>
+                        <td> @Html.DisplayFor(model => model.CarroObs)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!---modal body-->
+        <div class="modal-footer">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="CarroId" />
+                    <input type="submit" value="Excluir" class="btn btn-danger" />
+                    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                </form>
+            }
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<script>
+    function tirar() {
+            $(".modal-backdrop").remove();
+        }
+</script>

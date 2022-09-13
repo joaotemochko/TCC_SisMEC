@@ -1,0 +1,64 @@
+﻿@model SisMEC.Models.Servico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do Cliente</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ServicoDataEntrada)</th>
+                        <td> @Html.DisplayFor(model => model.ServicoDataEntrada)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ServicoDataSaida)</th>
+                        <td> @Html.DisplayFor(model => model.ServicoDataSaida)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ServicoDescricao)</th>
+                        <td>@Html.DisplayFor(model => model.ServicoDescricao)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ServicoValor)</th>
+                        <td> @Html.DisplayFor(model => model.ServicoValor)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ServicoPecas)</th>
+                        <td> @Html.DisplayFor(model => model.ServicoPecas)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ServicoObs)</th>
+                        <td>@Html.DisplayFor(model => model.ServicoObs)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ServicoCompleto)</th>
+                        <td>@Html.DisplayFor(model => model.ServicoCompleto)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.Cliente)</th>
+                        <td> @Html.DisplayFor(model => model.Cliente.ClienteCPF)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a class="btn btn-primary" asp-action="Index">Voltar</a>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+    }
+</script>

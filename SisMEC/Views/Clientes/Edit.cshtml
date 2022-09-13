@@ -1,0 +1,67 @@
+﻿@model SisMEC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm())
+        {
+            <div class="modal-header">
+                <h4 class="modal-title">Editar</h4>
+            </div>
+            @Html.AntiForgeryToken()
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ClienteId" />
+                <div class="modal-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ClienteNome" class="control-label"></label></th>
+                                <td><input asp-for="ClienteNome" class="form-control" /></td>
+                                <td><span asp-validation-for="ClienteNome" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ClienteCPF" class="control-label"></label></th>
+                                <td><input asp-for="ClienteCPF" class="form-control" /></td>
+                                <td><span asp-validation-for="ClienteCPF" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ClienteEmail" class="control-label"></label></th>
+                                <td><input asp-for="ClienteEmail" class="form-control" /></td>
+                                <td><span asp-validation-for="ClienteEmail" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ClienteTelefone" class="control-label"></label></th>
+                                <td><input asp-for="ClienteTelefone" class="form-control" /></td>
+                                <td><span asp-validation-for="ClienteTelefone" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ClienteEndereco" class="control-label"></label></th>
+                                <td><input asp-for="ClienteEndereco" class="form-control" /></td>
+                                <td><span asp-validation-for="ClienteEndereco" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroId" class="control-label"></label></th>
+                                <td><select asp-for="CarroId" class="form-control" asp-items="ViewBag.CarroId"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        }
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

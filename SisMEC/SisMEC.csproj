@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\js\chart\**" />
+    <Compile Remove="wwwroot\NovaPasta1\**" />
+    <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="wwwroot\js\chart\**" />
+    <Content Remove="wwwroot\NovaPasta1\**" />
+    <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\js\chart\**" />
+    <EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
+    <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="wwwroot\js\chart\**" />
+    <None Remove="wwwroot\NovaPasta1\**" />
+    <None Remove="wwwroot\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Context\DbContext.cs" />
+    <Compile Remove="Migrations\20220426050200_MigrationInicial.cs" />
+    <Compile Remove="Migrations\20220426050200_MigrationInicial.Designer.cs" />
+    <Compile Remove="Migrations\20220503203939_PopularUsuario.cs" />
+    <Compile Remove="Migrations\20220503203939_PopularUsuario.Designer.cs" />
+    <Compile Remove="Migrations\20220503211503_PopularServico.cs" />
+    <Compile Remove="Migrations\20220503211503_PopularServico.Designer.cs" />
+    <Compile Remove="Migrations\20220503212757_PopularCliente.cs" />
+    <Compile Remove="Migrations\20220503212757_PopularCliente.Designer.cs" />
+    <Compile Remove="Migrations\20220503213635_MigrationInicial.cs" />
+    <Compile Remove="Migrations\20220503213635_MigrationInicial.Designer.cs" />
+    <Compile Remove="Migrations\20220503213712_PopularClientes.cs" />
+    <Compile Remove="Migrations\20220503213712_PopularClientes.Designer.cs" />
+    <Compile Remove="Migrations\20220503213822_PopularServicos.cs" />
+    <Compile Remove="Migrations\20220503213822_PopularServicos.Designer.cs" />
+    <Compile Remove="Migrations\20220503214200_PopularUsuarios.cs" />
+    <Compile Remove="Migrations\20220503214200_PopularUsuarios.Designer.cs" />
+    <Compile Remove="Migrations\20220503214413_PopularProdutos.cs" />
+    <Compile Remove="Migrations\20220503214413_PopularProdutos.Designer.cs" />
+    <Compile Remove="Migrations\20220503215923_PopularCarros.cs" />
+    <Compile Remove="Migrations\20220503215923_PopularCarros.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\login.css" />
+    <Content Remove="wwwroot\images\Sismec_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="glyphicon" Version="1.0.1" />
+    <PackageReference Include="Glyphicon.HTMLHelper" Version="1.0.3" />
+    <PackageReference Include="Google.DataTable.Net.Wrapper" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="OwlCarousel" Version="1.3.3" />
+  </ItemGroup>
+
+</Project>

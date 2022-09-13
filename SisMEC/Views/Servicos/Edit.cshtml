@@ -1,0 +1,80 @@
+﻿@model SisMEC.Models.Servico
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm())
+        {
+            <div class="modal-header">
+                <h4 class="modal-title">Editar</h4>
+            </div>
+            @Html.AntiForgeryToken()
+
+            <form asp-action="Edit">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ServicoId" />
+                <div class="modal-body">
+
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoDataEntrada" class="control-label"></label></th>
+                                <td><input asp-for="ServicoDataEntrada" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoDataEntrada" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoDataSaida" class="control-label"></label></th>
+                                <td><input asp-for="ServicoDataSaida" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoDataSaida" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoDescricao" class="control-label"></label></th>
+                                <td><input asp-for="ServicoDescricao" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoDescricao" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoValor" class="control-label"></label></th>
+                                <td><input asp-for="ServicoValor" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoValor" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoPecas" class="control-label"></label></th>
+                                <td><input asp-for="ServicoPecas" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoPecas" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ServicoObs" class="control-label"></label></th>
+                                <td><input asp-for="ServicoObs" class="form-control" /></td>
+                                <td><span asp-validation-for="ServicoObs" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="ServicoCompleto" /> @Html.DisplayNameFor(model => model.ServicoCompleto)
+                                    </label>
+                                </th>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label>Cliente</label></th>
+                                <td><select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        }
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

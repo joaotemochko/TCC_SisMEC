@@ -1,0 +1,63 @@
+﻿@model SisMEC.Models.Carro
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm())
+        {
+            <div class="modal-header">
+                <h4 class="modal-title">CADASTRAR</h4>
+            </div>
+
+            @Html.AntiForgeryToken()
+            <form asp-action="Create">
+                <div class="modal-body">
+
+
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroMarca" class="control-label"></label></th>
+                                <td><input asp-for="CarroMarca" class="form-control" /></td>
+                                <td><span asp-validation-for="CarroMarca" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroModelo" class="control-label"></label></th>
+                                <td><input asp-for="CarroModelo" class="form-control" /></td>
+                                <td> <span asp-validation-for="CarroModelo" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroObs" class="control-label"></label></th>
+                                <td><input asp-for="CarroObs" class="form-control" /></td>
+                                <td><span asp-validation-for="CarroObs" class="text-danger"></span></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        }
+    </div>
+</div>
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+
+    }
+</script>
+

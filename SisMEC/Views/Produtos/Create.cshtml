@@ -1,0 +1,66 @@
+﻿@model SisMEC.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm())
+        {
+            <div class="modal-header">
+                <h4 class="modal-title">CADASTRAR</h4>
+            </div>
+
+            @Html.AntiForgeryToken()
+            <form asp-action="Create">
+                <div class="modal-body">
+
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ProdutoNome" class="control-label"></label></th>
+                                <td><input asp-for="ProdutoNome" class="form-control" /></td>
+                                <td><span asp-validation-for="ProdutoNome" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ProdutoQuantidade" class="control-label"></label></th>
+                                <td><input asp-for="ProdutoQuantidade" class="form-control" /></td>
+                                <td><span asp-validation-for="ProdutoQuantidade" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ProdutoValor" class="control-label"></label></th>
+                                <td><input asp-for="ProdutoValor" class="form-control" /></td>
+                                <td><span asp-validation-for="ProdutoValor" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="ProdutoDataValidade" class="control-label"></label></th>
+                                <td><input asp-for="ProdutoDataValidade" class="form-control" /></td>
+                                <td><span asp-validation-for="ProdutoDataValidade" class="text-danger"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        }
+    </div>
+</div>
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+
+    }
+</script>
+

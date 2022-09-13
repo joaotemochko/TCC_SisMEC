@@ -1,0 +1,44 @@
+﻿@model SisMEC.Models.Carro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do Carro</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroMarca)</th>
+                        <td>@Html.DisplayFor(model => model.CarroMarca)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroModelo)</th>
+                        <td> @Html.DisplayFor(model => model.CarroModelo)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.CarroObs)</th>
+                        <td> @Html.DisplayFor(model => model.CarroObs)</td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+         <div class="modal-footer">
+                <a class="btn btn-primary" asp-action="Index">Voltar</a>
+         </div>
+     </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+    }
+</script>
